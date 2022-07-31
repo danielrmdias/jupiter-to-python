@@ -1,0 +1,8 @@
+
+format: jb-book
+root: intro
+chapters:
+- file: ./lecture1/lecture1.ipynb
+- file: ./lecture2/lecture2.ipynb
+- file: ./lecture3/lecture3.ipynb
+- file: ./lecture4/lecture4.ipynb

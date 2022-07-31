@@ -25,7 +25,6 @@ jobs:
       # Build the book
       - name: Build book TOC file 
         run: |
-          jupyter nbconvert index.ipynb --to html
           jupyter-book toc from-project .
 
       - name: Build the book
