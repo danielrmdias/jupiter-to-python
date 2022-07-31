@@ -25,7 +25,7 @@ jobs:
       # Build the book
       - name: Build book TOC file 
         run: |
-          jupyter-book toc .
+          jupyter-book toc from-project .
 
       - name: Build the book
         run: |
