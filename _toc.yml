@@ -1,6 +1,6 @@
 
 format: jb-book
-root: intro
+root: index
 chapters:
 - file: ./lecture1/lecture1.ipynb
 - file: ./lecture2/lecture2.ipynb
