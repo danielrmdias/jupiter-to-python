@@ -1,0 +1,1930 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Introduction to Python
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture2/lecture2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/lecture2/lecture2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-2">
+   Lecture 2
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-elements-in-a-list">
+   Changing elements in a list
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enumerate-built-in">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+     built-in
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-1-create-a-list-and-modify-it">
+     Exercise 2.1: Create a list and modify it.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traversing-multiple-lists-simultaneously-zip-list1-list2">
+     Traversing multiple lists simultaneously:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       zip(list1,
+      </span>
+      <span class="pre">
+       list2,
+      </span>
+      <span class="pre">
+       ...)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-lists-list-of-lists">
+     Nested lists: list of lists
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples-lists-that-cannot-be-changed">
+     Tuples: lists that cannot be changed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-2-make-a-table-a-list-of-lists-of-function-values">
+     Exercise 2.2: Make a table (a list of lists) of function values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-if-construct">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     construct
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-3-express-a-step-heaviside-function-as-a-python-function">
+     Exercise 2.3: Express a step (Heaviside) function as a Python function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-4-implement-the-factorial-function">
+     Exercise 2.4: Implement the factorial function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-5-compute-the-length-of-a-path">
+     Exercise 2.5: Compute the length of a path
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-6-approximate-pi">
+     Exercise 2.6: Approximate
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-7-make-a-list-of-prime-numbers">
+     Exercise 2.7: Make a list of prime numbers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors-and-arrays">
+     Vectors and arrays
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#when-and-where-to-use-numpy-arrays">
+       When and where to use NumPy arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-vectorised-functions-work">
+     How vectorised functions work
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#watch-out-for-references-vs-copies-of-arrays">
+       Watch out for references vs. copies of arrays!
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-8-fill-lists-and-arrays-with-function-values">
+     Exercise 2.8: Fill lists and arrays with function values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generalised-array-indexing">
+     Generalised array indexing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-9-explore-array-slicing">
+     Exercise 2.9: Explore array slicing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-arrays">
+     2D arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-10-matrix-vector-multiplication">
+     Exercise 2.10: Matrix-vector multiplication
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       @
+      </span>
+     </code>
+     operator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-11-vectorised-function">
+     Exercise 2.11: Vectorised function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-12-matrix-matrix-multiplication">
+     Exercise 2.12: Matrix-matrix multiplication
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-13-2d-array-slicing">
+     Exercise 2.13: 2D array slicing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-2">
+   Lecture 2
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-elements-in-a-list">
+   Changing elements in a list
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enumerate-built-in">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+     built-in
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-1-create-a-list-and-modify-it">
+     Exercise 2.1: Create a list and modify it.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traversing-multiple-lists-simultaneously-zip-list1-list2">
+     Traversing multiple lists simultaneously:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       zip(list1,
+      </span>
+      <span class="pre">
+       list2,
+      </span>
+      <span class="pre">
+       ...)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-lists-list-of-lists">
+     Nested lists: list of lists
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples-lists-that-cannot-be-changed">
+     Tuples: lists that cannot be changed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-2-make-a-table-a-list-of-lists-of-function-values">
+     Exercise 2.2: Make a table (a list of lists) of function values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-if-construct">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     construct
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-3-express-a-step-heaviside-function-as-a-python-function">
+     Exercise 2.3: Express a step (Heaviside) function as a Python function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-4-implement-the-factorial-function">
+     Exercise 2.4: Implement the factorial function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-5-compute-the-length-of-a-path">
+     Exercise 2.5: Compute the length of a path
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-6-approximate-pi">
+     Exercise 2.6: Approximate
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-7-make-a-list-of-prime-numbers">
+     Exercise 2.7: Make a list of prime numbers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors-and-arrays">
+     Vectors and arrays
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#when-and-where-to-use-numpy-arrays">
+       When and where to use NumPy arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-vectorised-functions-work">
+     How vectorised functions work
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#watch-out-for-references-vs-copies-of-arrays">
+       Watch out for references vs. copies of arrays!
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-8-fill-lists-and-arrays-with-function-values">
+     Exercise 2.8: Fill lists and arrays with function values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generalised-array-indexing">
+     Generalised array indexing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-9-explore-array-slicing">
+     Exercise 2.9: Explore array slicing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-arrays">
+     2D arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-10-matrix-vector-multiplication">
+     Exercise 2.10: Matrix-vector multiplication
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       @
+      </span>
+     </code>
+     operator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-11-vectorised-function">
+     Exercise 2.11: Vectorised function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-12-matrix-matrix-multiplication">
+     Exercise 2.12: Matrix-matrix multiplication
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-13-2d-array-slicing">
+     Exercise 2.13: 2D array slicing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pybryt</span>
+<span class="kn">from</span> <span class="nn">lecture</span> <span class="kn">import</span> <span class="n">ok</span><span class="p">,</span> <span class="n">pybryt_reference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pybryt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">lecture</span> <span class="kn">import</span> <span class="n">ok</span><span class="p">,</span> <span class="n">pybryt_reference</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pybryt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-2">
+<h1>Lecture 2<a class="headerlink" href="#lecture-2" title="Permalink to this headline">#</a></h1>
+<section id="learning-objectives">
+<h2>Learning objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<p>At the end of this lecture, you will be able to:</p>
+<ul class="simple">
+<li><p>Modify elements in a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p></li>
+<li><p>Iterate through different combinations of lists.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> to store data elements and understand how it differs from a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p></li>
+<li><p>Explain the difference between locally-scoped and globally-scoped variables.</p></li>
+<li><p>Use an <code class="docutils literal notranslate"><span class="pre">if</span></code>-statement to execute some code blocks conditionally.</p></li>
+<li><p>Perform computations using <a class="reference external" href="http://www.numpy.org/">Numerical Python (<em>NumPy</em>)</a>.</p></li>
+<li><p>Handle multidimensional arrays.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="changing-elements-in-a-list">
+<h1>Changing elements in a list<a class="headerlink" href="#changing-elements-in-a-list" title="Permalink to this headline">#</a></h1>
+<p>Let’s say we want to add 2 to all the numbers in a list <code class="docutils literal notranslate"><span class="pre">v</span></code>. To do that, we have to use an index to access and modify its elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List before modification: </span><span class="si">{</span><span class="n">v</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># assign 4 to the 2nd element (index 1) in v</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List after modification: </span><span class="si">{</span><span class="n">v</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please note how we used <code class="docutils literal notranslate"><span class="pre">{v=}</span></code> in f-string to add <code class="docutils literal notranslate"><span class="pre">v=</span></code> in front of the list.</p>
+<p>Now, to add 2 to all values we need a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop over indices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this time we iterate over the indices of the list elements</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>instead of iterating over the values of elements in the list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<section id="enumerate-built-in">
+<h2><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> built-in<a class="headerlink" href="#enumerate-built-in" title="Permalink to this headline">#</a></h2>
+<p>As we have seen previouly, we often need to use both the value of an element in a sequence and its index. Python provides a convenience built-in function <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> to make this syntax clearer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">2</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-1-create-a-list-and-modify-it">
+<h2>Exercise 2.1: Create a list and modify it.<a class="headerlink" href="#exercise-2-1-create-a-list-and-modify-it" title="Permalink to this headline">#</a></h2>
+<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">mult(vector,</span> <span class="pre">n)</span></code> which takes list <code class="docutils literal notranslate"><span class="pre">vector</span></code> and number <code class="docutils literal notranslate"><span class="pre">n</span></code> as input arguments. The function should multiply each element in the list by <code class="docutils literal notranslate"><span class="pre">n</span></code> using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and return the resulting list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the following lines. Do not change any variable names for testing purposes.</span>
+
+<span class="c1"># def mult(vector, n):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
+    <span class="n">mult</span><span class="p">([</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">99.9</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="traversing-multiple-lists-simultaneously-zip-list1-list2">
+<h2>Traversing multiple lists simultaneously: <code class="docutils literal notranslate"><span class="pre">zip(list1,</span> <span class="pre">list2,</span> <span class="pre">...)</span></code><a class="headerlink" href="#traversing-multiple-lists-simultaneously-zip-list1-list2" title="Permalink to this headline">#</a></h2>
+<p>Let us consider how we can loop over elements in both <code class="docutils literal notranslate"><span class="pre">Cdegrees</span></code> and <code class="docutils literal notranslate"><span class="pre">Fdegrees</span></code> at the same time. One approach would be to use list indices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, we have to recreate the data from lecture 1.</span>
+<span class="n">Cdegrees</span> <span class="o">=</span> <span class="p">[</span><span class="n">deg</span> <span class="k">for</span> <span class="n">deg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="n">Fdegrees</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">deg</span> <span class="o">+</span> <span class="mi">32</span> <span class="k">for</span> <span class="n">deg</span> <span class="ow">in</span> <span class="n">Cdegrees</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Fdegrees</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An alternative construct, regarded as more ”Pythonic”, uses the <code class="docutils literal notranslate"><span class="pre">zip</span></code> built-in function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">,</span> <span class="n">Fdegrees</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, we can also traverse three or more lists simultaneously:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">e3</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e1</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">e2</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">e3</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the lists are of unequal length, then the loop stops when we reach the end of the shortest list. Experiment with this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>  <span class="c1"># len(l1) == 5</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>     <span class="c1"># len(l2) == 4</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>  <span class="c1"># len(l3) == 5</span>
+
+<span class="k">for</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">e3</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e1</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">e2</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">e3</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nested-lists-list-of-lists">
+<h2>Nested lists: list of lists<a class="headerlink" href="#nested-lists-list-of-lists" title="Permalink to this headline">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> can contain <strong>any</strong> object as its element, including another <code class="docutils literal notranslate"><span class="pre">list</span></code>. To illustrate this, consider storing the conversion table as a single Python list rather than two separate lists:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cdegrees</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span> <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="n">Fdegrees</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span> <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">Cdegrees</span><span class="p">]</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="p">[</span><span class="n">Cdegrees</span><span class="p">,</span> <span class="n">Fdegrees</span><span class="p">]</span>  <span class="c1"># List of two lists</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table1</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># access the first element of list table1 - Cdegrees list</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># access the second element of list table1 - Fdegrees list</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># access 4th element in the 2nd list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives us a table with two rows. How do we create a table of columns instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">,</span> <span class="n">Fdegrees</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">]</span>
+    <span class="n">table2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use list comprehension to do this more elegantly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">]</span> <span class="k">for</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">,</span> <span class="n">Fdegrees</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can loop through this list as before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span> <span class="ow">in</span> <span class="n">table2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since elements of <code class="docutils literal notranslate"><span class="pre">table2</span></code> are length-2 lists, in each iteration, we <em>unpack</em> each of the length-2 elements to <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
+</section>
+<section id="tuples-lists-that-cannot-be-changed">
+<h2>Tuples: lists that cannot be changed<a class="headerlink" href="#tuples-lists-that-cannot-be-changed" title="Permalink to this headline">#</a></h2>
+<p>Tuples are <strong>constant</strong> lists, i.e. we can use them in much the same way as lists except we cannot modify them. They are an example of an <a class="reference external" href="http://en.wikipedia.org/wiki/Immutable_object"><strong>immutable</strong></a> type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;temp.pdf&quot;</span><span class="p">)</span>  <span class="c1"># Define a tuple.</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;temp.pdf&quot;</span>    <span class="c1"># Can skip parenthesis as it is assumed in this context.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us see what happens when we try to modify the tuple like we did with a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">593</span><span class="n">c03edf054</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">78592</span><span class="n">bf72d62</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;append&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">0193</span><span class="n">a527a912</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">del</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">doesn</span><span class="s1">&#39;t support item deletion</span>
+</pre></div>
+</div>
+<p>However, we can use the tuple to compose a new tuple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, why would we use tuples when lists have more functionality?</p>
+<ul class="simple">
+<li><p>Tuples are constant and thus <em>protected against accidental changes</em>.</p></li>
+<li><p>Tuples are <em>faster</em> than lists.</p></li>
+<li><p>Tuples are <em>widely used</em> in Python software (so you need to know about tuples to understand other people’s code!)</p></li>
+<li><p>Tuples (but not lists) are hashable and can be used as <em>keys in dictionaries</em> (more about dictionaries later).</p></li>
+</ul>
+<p><strong>WARNING</strong>: Tuples are actually not always immutable. If a tuple contains mutable elements, e.g. <code class="docutils literal notranslate"><span class="pre">list</span></code>, it is possible to change the tuple. Let us have a look at this example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># we are appending 5 to the list which the tuple holds a reference of</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore, to ensure the tuple is immutable, it is necessary for it to contain only immutable elements. The best way to check if the tuple is actually mutable is to use the <code class="docutils literal notranslate"><span class="pre">hashable</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># tuple contains a list which is a mutable type</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">hash</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tuple </span><span class="si">{</span><span class="n">t</span> <span class="si">= }</span><span class="s2"> is immutable.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tuple </span><span class="si">{</span><span class="n">t</span> <span class="si">= }</span><span class="s2"> is mutable.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># tuple contains only immutable types</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">hash</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tuple </span><span class="si">{</span><span class="n">t</span> <span class="si">= }</span><span class="s2"> is immutable.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tuple </span><span class="si">{</span><span class="n">t</span> <span class="si">= }</span><span class="s2"> is mutable.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What does it then mean that some types are mutable and some are not? We will talk about this in lecture 4.</p>
+</section>
+<section id="exercise-2-2-make-a-table-a-list-of-lists-of-function-values">
+<h2>Exercise 2.2: Make a table (a list of lists) of function values<a class="headerlink" href="#exercise-2-2-make-a-table-a-list-of-lists-of-function-values" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Write a loop that evaluates the expression <span class="math notranslate nohighlight">\(y(t) = v_0 t − {1\over2}gt^2\)</span> for 11 evenly spaced <span class="math notranslate nohighlight">\(t\)</span> values ranging from <span class="math notranslate nohighlight">\(0\)</span>, to <span class="math notranslate nohighlight">\(2v_0/g\)</span> (remember that dividing a range into <span class="math notranslate nohighlight">\(n\)</span> intervals results in <span class="math notranslate nohighlight">\(n+1\)</span> values). You can assume that <span class="math notranslate nohighlight">\(v_0 = 1\,\)</span>ms<span class="math notranslate nohighlight">\(^{-1}\)</span> and <span class="math notranslate nohighlight">\(g = 9.81\,\)</span>ms<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p></li>
+<li><p>Store the time values and displacement (<span class="math notranslate nohighlight">\(y\)</span>) values as a nested list, i.e.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">ylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">displacement</span> <span class="o">=</span> <span class="p">[</span><span class="n">tlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Use the variable names <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, <code class="docutils literal notranslate"><span class="pre">ylist</span></code> and <code class="docutils literal notranslate"><span class="pre">displacement</span></code> as illustrated in the above example for testing purposes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the following lines. Do not change variable names for testing purposes.</span>
+
+<span class="c1"># tlist = ...</span>
+<span class="c1"># ylist = ...</span>
+<span class="c1"># displacement = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)):</span>
+    <span class="n">tlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">displacement</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-if-construct">
+<h2>The <code class="docutils literal notranslate"><span class="pre">if</span></code> construct<a class="headerlink" href="#the-if-construct" title="Permalink to this headline">#</a></h2>
+<p>Let us consider we need to program the following function:
+$<span class="math notranslate nohighlight">\(
+f(x)= 
+\begin{cases}
+    \sin(x),&amp; \text{if } 0 \leq x \leq \pi\\
+    0,              &amp; \text{otherwise}
+\end{cases}
+\)</span>$
+To do this, we need the <code class="docutils literal notranslate"><span class="pre">if</span></code> construct:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">pi</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please note the indentations we used to define which statements belong to which condition. Sometimes, it is clearer to write this as a conditional expression:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">pi</span> <span class="k">else</span> <span class="mi">0</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(-pi/2) =&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(pi/2) =&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(3*pi/2) =&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> block can be skipped if there are no statements to be executed when <code class="docutils literal notranslate"><span class="pre">False</span></code>. In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">True</span></code> is executed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">elif</span> <span class="n">condition3</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">2</span> <span class="n">are</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition3</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">3</span> <span class="n">are</span> <span class="kc">False</span><span class="o">&gt;</span>
+    
+<span class="o">&lt;</span><span class="nb">next</span> <span class="n">statement</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-2-3-express-a-step-heaviside-function-as-a-python-function">
+<h2>Exercise 2.3: Express a step (Heaviside) function as a Python function<a class="headerlink" href="#exercise-2-3-express-a-step-heaviside-function-as-a-python-function" title="Permalink to this headline">#</a></h2>
+<p>The following “step” function is known as the Heaviside function and it is widely used in mathematics:
+$<span class="math notranslate nohighlight">\(
+H(x)=
+\begin{cases}
+    0, &amp; \text{if}\; x &lt; 0\\
+    1, &amp; \text{if}\; x \ge 0.
+\end{cases}
+\)</span><span class="math notranslate nohighlight">\(
+Write a Python function `heaviside(x)` that computes \)</span>H(x)$.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the following lines. Do not change variable names for testing purposes.</span>
+
+<span class="c1"># def heaviside(x):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="n">heaviside</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">),</span> <span class="n">heaviside</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">heaviside</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-4-implement-the-factorial-function">
+<h2>Exercise 2.4: Implement the factorial function<a class="headerlink" href="#exercise-2-4-implement-the-factorial-function" title="Permalink to this headline">#</a></h2>
+<p>The factorial of <span class="math notranslate nohighlight">\(n\)</span>, written as <span class="math notranslate nohighlight">\(n!\)</span>, is defined as</p>
+<div class="math notranslate nohighlight">
+\[n! = n(n − 1)(n − 2) \cdot \ldots \cdot 2 \cdot 1,\]</div>
+<p>with the special cases</p>
+<div class="math notranslate nohighlight">
+\[1! = 1,$$ $$0! = 1.\]</div>
+<p>For example, <span class="math notranslate nohighlight">\(4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24\)</span>, and <span class="math notranslate nohighlight">\(2! = 2 \cdot 1 = 2\)</span>.</p>
+<p>Implement your own factorial function to calculate <span class="math notranslate nohighlight">\(n!\)</span>. Return <span class="math notranslate nohighlight">\(1\)</span> immediately if <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(0\)</span>; otherwise use a loop to compute <span class="math notranslate nohighlight">\(n!\)</span>. You can use Python’s own <a class="reference external" href="https://docs.python.org/3/library/math.html">math.factorial(x)</a> to check your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def my_factorial(n):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)):</span>
+    <span class="n">my_factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-5-compute-the-length-of-a-path">
+<h2>Exercise 2.5: Compute the length of a path<a class="headerlink" href="#exercise-2-5-compute-the-length-of-a-path" title="Permalink to this headline">#</a></h2>
+<p>Some object is moving along a path in the plane. At <span class="math notranslate nohighlight">\(n\)</span> points of time, we have recorded the corresponding <span class="math notranslate nohighlight">\((x, y)\)</span> positions of the object:
+<span class="math notranslate nohighlight">\((x_0, y_0), (x_1, y_1), \ldots, (x_{n-1}, y_{n-1})\)</span>. The total length <span class="math notranslate nohighlight">\(L\)</span> of the path from <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> to <span class="math notranslate nohighlight">\((x_{n-1}, y_{n-1})\)</span> is the sum of all the individual line segments <span class="math notranslate nohighlight">\((x_{i-1}, y_{i-1})\)</span> to <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, <span class="math notranslate nohighlight">\(i = 1, \ldots, n-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[L = \sum_{i=1}^{n-1}{\sqrt{(x_i - x_{i-1})^2 + (y_i - y_{i-1})^2}}.\]</div>
+<p>Create a function <code class="docutils literal notranslate"><span class="pre">path_length(x,</span> <span class="pre">y)</span></code> for computing <span class="math notranslate nohighlight">\(L\)</span> according to the formula. The arguments <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are two lists that hold all the <span class="math notranslate nohighlight">\(x_0, \ldots, x_{n-1}\)</span> and <span class="math notranslate nohighlight">\(y_0, \ldots, y_{n-1}\)</span> coordinates, respectively. Test the function on a triangular path with the four points (1, 1), (2, 1), (1, 2), and (1, 1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def path_length(x, y):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+    <span class="n">path_length</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">561</span><span class="p">,</span> <span class="mi">231</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">165.4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-6-approximate-pi">
+<h2>Exercise 2.6: Approximate <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#exercise-2-6-approximate-pi" title="Permalink to this headline">#</a></h2>
+<p>As you know, the circumference of a circle is <span class="math notranslate nohighlight">\(2r\pi\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is the circle’s radius. <span class="math notranslate nohighlight">\(\pi\)</span> is therefore the circumference of a circle with <span class="math notranslate nohighlight">\(r= \frac{1}{2}\)</span>. We can approximate this circumference by a many-sided polygon through points on the circle. The sum of the lengths of the sides of the polygon will approximate the circumference.</p>
+<p>Firstly compute <span class="math notranslate nohighlight">\(n+1\)</span> points around a circle according to the formulae:</p>
+<p><span class="math notranslate nohighlight">\( x_i = \frac{1}{2} \cos(\frac{2 \pi i}{n}),   y_i = \frac{1}{2} \sin(\frac{2 \pi i}{n}),   i = 0 \cdots n\)</span></p>
+<p>Then use your <code class="docutils literal notranslate"><span class="pre">path_length</span></code> function from the previous exercise to approximate <span class="math notranslate nohighlight">\(\pi\)</span>. Name your function for estimating <span class="math notranslate nohighlight">\(\pi\)</span> <code class="docutils literal notranslate"><span class="pre">approx_pi</span></code> for testing purposes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def approx_pi(n):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)):</span>
+    <span class="n">approx_pi</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-7-make-a-list-of-prime-numbers">
+<h2>Exercise 2.7: Make a list of prime numbers<a class="headerlink" href="#exercise-2-7-make-a-list-of-prime-numbers" title="Permalink to this headline">#</a></h2>
+<p>Define a function called <code class="docutils literal notranslate"><span class="pre">prime_list</span></code> that lists all the prime numbers up to a given <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><strong>Hint</strong>: Google the <em>Sieve of Eratosthenes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def prime_list(n):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)):</span>
+    <span class="n">prime_list</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="vectors-and-arrays">
+<h2>Vectors and arrays<a class="headerlink" href="#vectors-and-arrays" title="Permalink to this headline">#</a></h2>
+<p>You have known <strong>vectors</strong> since high school mathematics, e.g. point <span class="math notranslate nohighlight">\((x, y)\)</span> in the plane, point <span class="math notranslate nohighlight">\((x, y, z)\)</span> in space. In general, we can describe a vector <span class="math notranslate nohighlight">\(v\)</span> as an <span class="math notranslate nohighlight">\(n\)</span>-tuple of numbers: <span class="math notranslate nohighlight">\(v=(v_0, \ldots, v_{n-1})\)</span>. One way to store vectors in Python is by using sequences, e.g. <em>lists</em> or <em>tuples</em>: <span class="math notranslate nohighlight">\(v_i\)</span> is stored as <code class="docutils literal notranslate"><span class="pre">v[i]</span></code>.</p>
+<p><strong>Arrays</strong> are a generalisation of vectors where we can have multiple indices: <span class="math notranslate nohighlight">\(A_{ij}\)</span>, <span class="math notranslate nohighlight">\(A_{ijk}\)</span>. In Python, this is represented as a nested list, accessed as <code class="docutils literal notranslate"><span class="pre">A[i][j]</span></code>, <code class="docutils literal notranslate"><span class="pre">A[i][j][k]</span></code>.</p>
+<p><strong>Example</strong>: Matrices, a table of numbers with one index for the row and one for the column
+$<span class="math notranslate nohighlight">\(
+\left\lbrack\begin{array}{cccc}
+0 &amp; 12 &amp; -1 &amp; 5q\cr
+11 &amp; 5 &amp; 5 &amp; -2
+\end{array}\right\rbrack
+\hspace{1cm}
+A =
+\left\lbrack\begin{array}{ccc}
+A_{0,0} &amp; \cdots &amp;  A_{0,n-1}\cr
+\vdots &amp; \ddots &amp;  \vdots\cr
+A_{m-1,0} &amp; \cdots &amp; A_{m-1,n-1}
+\end{array}\right\rbrack
+\)</span>$
+The number of indices in an array is the <em>number of dimensions</em>. Using these terms, a vector can be described as a one-dimensional array or dimension-1 array.</p>
+<p>In practice, we use <a class="reference external" href="http://www.numpy.org/">Numerical Python (<em>NumPy</em>)</a> arrays instead of lists to represent mathematical arrays because it is <strong>much</strong> faster for large arrays.</p>
+<p>Let us consider an example where we store <span class="math notranslate nohighlight">\((x,y)\)</span> points along a curve in Python lists and numpy arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample function</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+
+<span class="c1"># Generate n points in [0, 1]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># x spacing</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">dx</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>  <span class="c1"># Python list</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+
+<span class="c1"># Turn these Python lists into Numerical Python (NumPy) arrays:</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># as a convention, we import &quot;numpy as np&quot;</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of first making lists with <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y = f (x)\)</span> data, and then turning lists into arrays, we can make NumPy arrays
+directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>                        <span class="c1"># number of points</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>    <span class="c1"># generates n points between 0 and 1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List comprehensions create lists, not arrays, but we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">])</span>  <span class="c1"># list -&gt; array</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Passing a list as an argument to some other function (like <code class="docutils literal notranslate"><span class="pre">np.array</span></code> in this case) is very common. Therefore, Python allows to omit the square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. This results in passing a <em>generator expression</em> which is both faster and more memory efficient.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since this is not the topic of this introduction to Python lecture series, if you would like to understand more, please refer to <a class="reference external" href="https://peps.python.org/pep-0289/">PEP289</a>.</p>
+<section id="when-and-where-to-use-numpy-arrays">
+<h3>When and where to use NumPy arrays<a class="headerlink" href="#when-and-where-to-use-numpy-arrays" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Python lists can hold any sequence of any Python objects. However, NumPy arrays can only hold objects of the same type. We refer to NumPy arrays as flat sequences, whereas we refer to lists and tuples as containers (or container sequences).</p></li>
+<li><p>Arrays are most efficient when the elements are basic number types (<em>float</em>, <em>int</em>, <em>complex</em>).</p></li>
+<li><p>In that case, arrays are stored efficiently in the computer’s memory, and we can compute very efficiently with the array elements.</p></li>
+<li><p>We can compute mathematical operations on whole arrays without loops in Python. For example,</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10001</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10001</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>can be coded as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the latter case, the loop over all elements is now performed in an efficient C-function. Instead of using Python <code class="docutils literal notranslate"><span class="pre">for</span></code>-loops, operations on whole arrays are called vectorisation, and they are a very <strong>convenient</strong>, <strong>efficient</strong>, and therefore an <strong>important</strong> programming technique to master.</p>
+<p>Let us consider a simple vectorisation example: a loop to compute <span class="math notranslate nohighlight">\(x\)</span> coordinates (<code class="docutils literal notranslate"><span class="pre">x2</span></code>) and <span class="math notranslate nohighlight">\(y=f(x)\)</span> coordinates (<code class="docutils literal notranslate"><span class="pre">y2</span></code>) along a function curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This computation can be replaced by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The advantage of this approach is:</p>
+<ul class="simple">
+<li><p>There is no need to allocate space for <code class="docutils literal notranslate"><span class="pre">y2</span></code> (via the NumPy <em>zeros</em> function).</p></li>
+<li><p>There is no need for a loop.</p></li>
+<li><p>It is <em>much faster</em>.</p></li>
+</ul>
+</section>
+</section>
+<section id="how-vectorised-functions-work">
+<h2>How vectorised functions work<a class="headerlink" href="#how-vectorised-functions-work" title="Permalink to this headline">#</a></h2>
+<p>Consider the function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> is intended for a number <span class="math notranslate nohighlight">\(x\)</span>, i.e. a <em>scalar</em>. So, what happens when we call <code class="docutils literal notranslate"><span class="pre">f(x2)</span></code>, where <code class="docutils literal notranslate"><span class="pre">x2</span></code> is a NumPy array? <strong>The function evaluates <span class="math notranslate nohighlight">\(x^3\)</span> for an array <span class="math notranslate nohighlight">\(x\)</span></strong>. NumPy supports arithmetic operations on arrays, which correspond to the equivalent operations on each element. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>                   <span class="c1"># x[i]**3 for all i</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># cos(x[i]) for all i</span>
+<span class="n">r3</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>     <span class="c1"># x[i]**3 + x[i]*cos(x[i]) for all i</span>
+<span class="n">r4</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span>     <span class="c1"># x[i]/3*exp(-x[i]*0.5) for all i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In each of these cases, a highly optimised C-function is actually called to evaluate the expression. In this example, the <code class="docutils literal notranslate"><span class="pre">cos</span></code> function called for an <code class="docutils literal notranslate"><span class="pre">array</span></code> is imported from NumPy rather than from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module which only acts on scalars.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Functions that can operate on arrays are called <strong>vectorised functions</strong>.</p></li>
+<li><p>Vectorisation is the process of turning a non-vectorised expression/algorithm into a vectorised expression/algorithm.</p></li>
+<li><p>Mathematical functions in Python automatically work for both scalar and array (vector) arguments, i.e. no vectorisation is needed by the programmer.</p></li>
+</ul>
+<section id="watch-out-for-references-vs-copies-of-arrays">
+<h3>Watch out for references vs. copies of arrays!<a class="headerlink" href="#watch-out-for-references-vs-copies-of-arrays" title="Permalink to this headline">#</a></h3>
+<p>Consider this code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice what happened here - we changed a value in <code class="docutils literal notranslate"><span class="pre">a</span></code>, but the corresponding value in <code class="docutils literal notranslate"><span class="pre">x</span></code> was also changed! This is because <code class="docutils literal notranslate"><span class="pre">a</span></code> refers to the same array as <code class="docutils literal notranslate"><span class="pre">x</span></code>. If we want a separate copy of <code class="docutils literal notranslate"><span class="pre">x</span></code>, then we have to make an explicit copy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will discuss the references later in lecture 4.</p>
+</section>
+</section>
+<section id="exercise-2-8-fill-lists-and-arrays-with-function-values">
+<h2>Exercise 2.8: Fill lists and arrays with function values<a class="headerlink" href="#exercise-2-8-fill-lists-and-arrays-with-function-values" title="Permalink to this headline">#</a></h2>
+<p>A function with many applications in science is defined as:</p>
+<div class="math notranslate nohighlight">
+\[h(x) = \frac{1}{\sqrt{2\pi}}\text{e}^{-\frac{1}{2}x^2}\]</div>
+<ul class="simple">
+<li><p>Implement the above formula as a Python function. Call the function <code class="docutils literal notranslate"><span class="pre">h</span></code> and it should take just one argument, <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Create a NumPy array (call it <code class="docutils literal notranslate"><span class="pre">x</span></code>) that has 9 uniformly spaced points in <span class="math notranslate nohighlight">\([−4, 4]\)</span>.</p></li>
+<li><p>Create a second NumPy array (call it <code class="docutils literal notranslate"><span class="pre">y</span></code>) with the function <code class="docutils literal notranslate"><span class="pre">h(x)</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def h(x):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="n">h</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generalised-array-indexing">
+<h2>Generalised array indexing<a class="headerlink" href="#generalised-array-indexing" title="Permalink to this headline">#</a></h2>
+<p>We can select a slice of an array using <code class="docutils literal notranslate"><span class="pre">a[start:stop:inc]</span></code>, where the slice <code class="docutils literal notranslate"><span class="pre">start:stop:inc</span></code> implies a set of indices starting from <code class="docutils literal notranslate"><span class="pre">start</span></code>, up to <code class="docutils literal notranslate"><span class="pre">stop</span></code> in increments <code class="docutils literal notranslate"><span class="pre">inc</span></code>. Any integer list or array can be used to indicate a set of indices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># i.e. set the elements with indicies 1, 6, and 7 in the array to 10.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>   <span class="c1"># same as a[2:8:3] = -2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even boolean expressions can be used to select part of an array(!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># pick out all negative elements</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>  <span class="c1"># if a[i]&lt;0, set a[i]=10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-9-explore-array-slicing">
+<h2>Exercise 2.9: Explore array slicing<a class="headerlink" href="#exercise-2-9-explore-array-slicing" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Create a NumPy array called <code class="docutils literal notranslate"><span class="pre">w</span></code> with 31 uniformly spaced values ranging from 0 to 3.</p></li>
+<li><p>Using array slicing, create a NumPy array called <code class="docutils literal notranslate"><span class="pre">wbits</span></code> that starts from the <span class="math notranslate nohighlight">\(4^{th}\)</span> element of <code class="docutils literal notranslate"><span class="pre">w</span></code>, excludes the final element of <code class="docutils literal notranslate"><span class="pre">w</span></code> and selects every <span class="math notranslate nohighlight">\(3^{rd}\)</span> element.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># w = ...</span>
+<span class="c1"># wbits = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)):</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">wbits</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_9&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="d-arrays">
+<h2>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this headline">#</a></h2>
+<p>When we have a table of numbers,</p>
+<div class="math notranslate nohighlight">
+\[
+\left\lbrack\begin{array}{cccc}
+0 &amp; 12 &amp; -1 &amp; 5\cr
+-1 &amp; -1 &amp; -1 &amp; 0\cr
+11 &amp; 5 &amp; 5 &amp; -2
+\end{array}\right\rbrack
+\]</div>
+<p>(i.e. a <em>matrix</em>) it is natural to use a two-dimensional array <span class="math notranslate nohighlight">\(A_{i, j}\)</span> with one index for the rows and one for the columns:</p>
+<div class="math notranslate nohighlight">
+\[
+A = 
+\left\lbrack\begin{array}{ccc}
+A_{0,0} &amp; \cdots &amp;  A_{0,n-1}\cr
+\vdots &amp; \ddots &amp;  \vdots\cr
+A_{m-1,0} &amp; \cdots &amp; A_{m-1,n-1}
+\end{array}\right\rbrack
+\]</div>
+<p>Let us recreate this array using NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># we create a 2-dimensional (3 x 4) array filled with zeros</span>
+
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># we can also use the same syntax that we used for nested lists</span>
+
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let us create a nested list and then convert into a 2D array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cdegrees</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Fdegrees</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span> <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">Cdegrees</span><span class="p">]</span>
+<span class="n">table</span> <span class="o">=</span> <span class="p">[[</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">]</span> <span class="k">for</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">,</span> <span class="n">Fdegrees</span><span class="p">)]</span>  <span class="c1"># create a nested list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert this nested list into a NumPy array:</span>
+<span class="n">table2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see the number of elements in each dimension we ask for array’s <code class="docutils literal notranslate"><span class="pre">shape</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">table2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>i.e. our table has 11 rows and 2 columns.</p>
+<p>Let us write a loop over all array elements of A:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">table2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">table2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;table2[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">] = </span><span class="si">{</span><span class="n">table2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index_tuple</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">table2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;index </span><span class="si">{</span><span class="n">index_tuple</span><span class="si">}</span><span class="s2"> has value </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also extract slices from multi-dimensional arrays as before. For example, extract the second column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">table2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># 2nd column (index 1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Play with this more complicated example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-10-matrix-vector-multiplication">
+<h2>Exercise 2.10: Matrix-vector multiplication<a class="headerlink" href="#exercise-2-10-matrix-vector-multiplication" title="Permalink to this headline">#</a></h2>
+<p>A matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and a vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, represented in Python as a 2D array and a 1D array, respectively, are given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A} = \left\lbrack\begin{array}{ccc}
+0 &amp; 12 &amp; -1\cr
+-1 &amp; -1 &amp; -1\cr
+11 &amp; 5 &amp; 5
+\end{array}\right\rbrack
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{b} = \left\lbrack\begin{array}{c}
+-2\cr
+1\cr
+7
+\end{array}\right\rbrack
+\]</div>
+<p>Multiplying a matrix by a vector results in another vector <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>, whose components are defined by the general rule:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{c}_i = \sum_j\mathbf{A}_{i, j}\mathbf{b}_j\]</div>
+<ul class="simple">
+<li><p>Define <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> as NumPy arrays</p></li>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">multiply</span></code> that takes two arguments, a matrix and a vector in the form of NumPy arrays, and returns a NumPy array containing their product.</p></li>
+<li><p>Call this function on <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, and store the result in a variable <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def multiply(A, b):</span>
+<span class="c1">#     ...</span>
+
+<span class="c1"># A = ...</span>
+<span class="c1"># b = ...</span>
+<span class="c1"># c = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+    <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">multiply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operator">
+<h2><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator<a class="headerlink" href="#operator" title="Permalink to this headline">#</a></h2>
+<p>Matrix-matrix or matrix-vector multiplication is a very common operation in computational and data science. Therefore, NumPy provides a convenience operator <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> that can be applied between arrays of compatible shapes for multiplication. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">Ab</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">A</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Ab</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-11-vectorised-function">
+<h2>Exercise 2.11: Vectorised function<a class="headerlink" href="#exercise-2-11-vectorised-function" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(A_{33}\)</span> be the two-dimensional array</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A_{33}} = \left\lbrack\begin{array}{ccc}
+0 &amp; 12 &amp; -1\cr
+-1 &amp; -1 &amp; -1\cr
+11 &amp; 5 &amp; 5
+\end{array}\right\rbrack
+\]</div>
+<p>Implement and apply the function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^3 + xe^x + 1\]</div>
+<p>to each element in <span class="math notranslate nohighlight">\(A_{33}\)</span>. Then calculate the result of the array expression <span class="math notranslate nohighlight">\({A_{33}}^3 + A_{33}e^{A_{33}} + 1\)</span>, and demonstrate that the end result of the two methods are the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># A33 = ...</span>
+
+<span class="c1"># def f_cubic(A):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)):</span>
+    <span class="n">f_cubic</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]])),</span> <span class="n">A33</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-12-matrix-matrix-multiplication">
+<h2>Exercise 2.12: Matrix-matrix multiplication<a class="headerlink" href="#exercise-2-12-matrix-matrix-multiplication" title="Permalink to this headline">#</a></h2>
+<p>The general rule for multiplying an <span class="math notranslate nohighlight">\(n \times m\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> by a <span class="math notranslate nohighlight">\(m \times p\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> results in a <span class="math notranslate nohighlight">\(n \times p\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>, whose components are defined by the general rule</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{C}_{i,j} = \sum^m_{k=1}\mathbf{A}_{i,k}\mathbf{B}_{k,j}\]</div>
+<p>Again let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be the two-dimensional array</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A} = \left\lbrack\begin{array}{ccc}
+0 &amp; 12 &amp; -1\cr
+-1 &amp; -1 &amp; -1\cr
+11 &amp; 5 &amp; 5
+\end{array}\right\rbrack
+\]</div>
+<p>and let <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> be the two-dimensional array</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{B} = \left\lbrack\begin{array}{ccc}
+-2 &amp; 1 &amp; 7\cr
+3 &amp; 0 &amp; 6\cr
+2 &amp; 3 &amp; 5
+\end{array}\right\rbrack.
+\]</div>
+<p>Define <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> as NumPy arrays, and write a function <code class="docutils literal notranslate"><span class="pre">f_mult</span></code> which multiplies them together using the above rule. Save the result of multiplication <code class="docutils literal notranslate"><span class="pre">f_mult(A,</span> <span class="pre">B)</span></code> in variable <code class="docutils literal notranslate"><span class="pre">C</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def f_mult(A, B):</span>
+<span class="c1">#     if A.shape[1] != B.shape[0]:</span>
+<span class="c1">#         raise RuntimeError(&#39;Matrix A should have the same number of columns as B has rows.&#39;)</span>
+<span class="c1">#     res = np.zeros([A.shape[0], B.shape[1]])</span>
+<span class="c1">#     ...</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1"># C = f_mult(A, B)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)):</span>
+    <span class="n">f_mult</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">91</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">14</span><span class="p">]])),</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_12&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-13-2d-array-slicing">
+<h2>Exercise 2.13: 2D array slicing<a class="headerlink" href="#exercise-2-13-2d-array-slicing" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Create a 1D NumPy array called <code class="docutils literal notranslate"><span class="pre">odd</span></code> with all of the odd numbers from 1 to 55</p></li>
+<li><p>Create a 2D NumPy array called <code class="docutils literal notranslate"><span class="pre">odd_sq</span></code> with all of the odd numbers from 1 to 55 in a matrix with 4 rows and 7 columns</p></li>
+<li><p>Using array slicing, create a 2D NumPy array called, <code class="docutils literal notranslate"><span class="pre">odd_bits</span></code>, that starts from the <span class="math notranslate nohighlight">\(2^{nd}\)</span> column of <code class="docutils literal notranslate"><span class="pre">odd_sq</span></code> and selects every other column, of only the <span class="math notranslate nohighlight">\(2^{nd}\)</span> and <span class="math notranslate nohighlight">\(3^{rd}\)</span> rows of <code class="docutils literal notranslate"><span class="pre">odd_sq</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># odd = ...</span>
+<span class="c1"># odd_sq = ...</span>
+<span class="c1"># odd_bits = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)):</span>
+    <span class="n">odd</span><span class="p">,</span> <span class="n">odd_sq</span><span class="p">,</span> <span class="n">odd_bits</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-2_13&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

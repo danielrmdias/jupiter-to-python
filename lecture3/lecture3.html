@@ -1,0 +1,1272 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Introduction to Python
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lecture3/lecture3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/lecture3/lecture3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-3">
+   Lecture 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-curves-the-basics">
+     Plotting curves - the basics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1-plot-a-formula">
+     Exercise 3.1: Plot a formula
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2-plot-another-formula">
+     Exercise 3.2: Plot another formula
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-curves-in-the-same-plot">
+     Multiple curves in the same plot
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-3-plot-a-formula-for-several-parameters">
+     Exercise 3.3: Plot a formula for several parameters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-errors-gracefully">
+     Handling errors gracefully
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-4-test-more-in-the-program">
+     Exercise 3.4: Test more in the program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-5-implement-the-factorial-function-with-exception-handling">
+     Exercise 3.5: Implement the factorial function with exception handling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-6-wave-speed">
+     Exercise 3.6: Wave speed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-data-from-a-plain-text-file">
+     Reading data from a plain text file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-7-read-a-two-column-data-file">
+     Exercise 3.7: Read a two-column data file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-8-read-a-data-file">
+     Exercise 3.8: Read a data file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-9-read-acceleration-data-and-find-velocities">
+     Exercise 3.9: Read acceleration data and find velocities
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-writing">
+     File writing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-3">
+   Lecture 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-objectives">
+     Learning objectives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-curves-the-basics">
+     Plotting curves - the basics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-1-plot-a-formula">
+     Exercise 3.1: Plot a formula
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-2-plot-another-formula">
+     Exercise 3.2: Plot another formula
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-curves-in-the-same-plot">
+     Multiple curves in the same plot
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-3-plot-a-formula-for-several-parameters">
+     Exercise 3.3: Plot a formula for several parameters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-errors-gracefully">
+     Handling errors gracefully
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-4-test-more-in-the-program">
+     Exercise 3.4: Test more in the program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-5-implement-the-factorial-function-with-exception-handling">
+     Exercise 3.5: Implement the factorial function with exception handling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-6-wave-speed">
+     Exercise 3.6: Wave speed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-data-from-a-plain-text-file">
+     Reading data from a plain text file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-7-read-a-two-column-data-file">
+     Exercise 3.7: Read a two-column data file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-8-read-a-data-file">
+     Exercise 3.8: Read a data file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-9-read-acceleration-data-and-find-velocities">
+     Exercise 3.9: Read acceleration data and find velocities
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-writing">
+     File writing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pybryt</span>
+<span class="kn">from</span> <span class="nn">lecture</span> <span class="kn">import</span> <span class="n">ok</span><span class="p">,</span> <span class="n">pybryt_reference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pybryt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">lecture</span> <span class="kn">import</span> <span class="n">ok</span><span class="p">,</span> <span class="n">pybryt_reference</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pybryt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-3">
+<h1>Lecture 3<a class="headerlink" href="#lecture-3" title="Permalink to this headline">#</a></h1>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<p>At the end of this lecture, you will be able to:</p>
+<ul class="simple">
+<li><p>Plot 2D graphs.</p></li>
+<li><p>Read data from files.</p></li>
+<li><p>Catch run-time errors and handle them gracefully rather than letting the program simply fail.</p></li>
+</ul>
+</section>
+<section id="plotting-curves-the-basics">
+<h2>Plotting curves - the basics<a class="headerlink" href="#plotting-curves-the-basics" title="Permalink to this headline">#</a></h2>
+<p>If you have programmed in Python before, or when you start looking at coding examples online, you will notice a few different modules that you can import to enable you to accomplish more or less the same objective. The three most common are <a class="reference external" href="https://matplotlib.org/index.html">matplotlib</a>, <a class="reference external" href="https://matplotlib.org/api/pyplot_api.html">pyplot</a>, and pylab. We will leave it to you to read the <a class="reference external" href="https://matplotlib.org/faq/usage_faq.html#matplotlib-pyplot-and-pylab-how-are-they-related">official documentation to see how these three are related</a>. For this lecture series, we will be importing <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> so that it is always clear from where each function call is coming.</p>
+<p>Let us start with a simple example by plotting the function $<span class="math notranslate nohighlight">\(y = t^2e^{-t^2}.\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">51</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plots also should have <em>labels</em> on the axis, a <em>title</em>, and sometimes a specific extent of the axis (perhaps you wish to easily compare two graphs side-by-side):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">51</span><span class="p">)</span>  <span class="c1"># Generates 51 points between 0 and 3.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t^2\exp(-t^2)$&quot;</span><span class="p">)</span>  <span class="c1"># For added awesomeness you can use LaTeX syntax.</span>
+
+<span class="c1"># Add a legend to our plot.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Label the axes.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Specify the extent of the axes [tmin, tmax, ymin, ymax].</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+
+<span class="c1"># Set the plot title.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My second graph&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-1-plot-a-formula">
+<h2>Exercise 3.1: Plot a formula<a class="headerlink" href="#exercise-3-1-plot-a-formula" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>NOTE: We have found that automated assessment is too unreliable for assessing plots. For feedback on the plots compare with your peers or ask one of the TAs to give you feedback.</p>
+</div></blockquote>
+<p>Make a plot of the function $<span class="math notranslate nohighlight">\(y(t) = v_0t − {1\over2}gt^2\)</span><span class="math notranslate nohighlight">\( for \)</span>v_0 = 10 ,\text{ms}^{-1}<span class="math notranslate nohighlight">\(, \)</span>g = 9.81 ,\text{ms}^{-2}<span class="math notranslate nohighlight">\(, and \)</span>t \in [0, 2v_0/g]<span class="math notranslate nohighlight">\(. The label on the \)</span>x<span class="math notranslate nohighlight">\( axis should be 'time (s)' and the label on the \)</span>y$ axis should be ‘height (m)’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-2-plot-another-formula">
+<h2>Exercise 3.2: Plot another formula<a class="headerlink" href="#exercise-3-2-plot-another-formula" title="Permalink to this headline">#</a></h2>
+<p>The function</p>
+<div class="math notranslate nohighlight">
+\[f(x, t) = e^{-(x - 3t)^2}\sin(3\pi(x - t))\]</div>
+<p>describes, for a fixed value of <span class="math notranslate nohighlight">\(t\)</span>, a wave localised in space. Write a program that visualises this function as a function of <span class="math notranslate nohighlight">\(x\)</span> on the interval <span class="math notranslate nohighlight">\([−4, 4]\)</span> when <span class="math notranslate nohighlight">\(t = 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-curves-in-the-same-plot">
+<h2>Multiple curves in the same plot<a class="headerlink" href="#multiple-curves-in-the-same-plot" title="Permalink to this headline">#</a></h2>
+<p>We can also plot several curves in one plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">f1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">51</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t^2\exp(-t^2)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t^4\exp(-t^2)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>  <span class="c1"># uses labels we defined previously</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plotting two curves in the same plot&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When plotting multiple curves in the same plot, PyLab usually does a good job of making sure that the different lines look different. However, sometimes you need to take action yourself (e.g. if you need to print your graph out in black&amp;white). To do this, we can add an extra argument to the plot command, where we specify what we want - e.g. <code class="docutils literal notranslate"><span class="pre">r-</span></code> means a <em>red solid line</em>, while <code class="docutils literal notranslate"><span class="pre">bo</span></code> means <em>blue circles</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>  <span class="c1"># we can also add a grid to our plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For further examples check out the <a class="reference external" href="https://matplotlib.org/">matplotlib</a> documentation.</p>
+</section>
+<section id="exercise-3-3-plot-a-formula-for-several-parameters">
+<h2>Exercise 3.3: Plot a formula for several parameters<a class="headerlink" href="#exercise-3-3-plot-a-formula-for-several-parameters" title="Permalink to this headline">#</a></h2>
+<p>Write a program in which you generate 10 uniformly spaced values for <span class="math notranslate nohighlight">\(v_0\)</span> range from 1 to 20, and plot the function <span class="math notranslate nohighlight">\(y(t) = v_0t − \frac{1}{2}gt^2\)</span> within the time range <span class="math notranslate nohighlight">\(t \in [0, 2v_0/g]\)</span>. Assume <span class="math notranslate nohighlight">\(g = 9.81 \,\text{ms}^{-2}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="handling-errors-gracefully">
+<h2>Handling errors gracefully<a class="headerlink" href="#handling-errors-gracefully" title="Permalink to this headline">#</a></h2>
+<p>We expect you have seen plenty of run-time errors. When an error occurs, an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> is <em>raised</em>. These exceptions tend to be very specific, and it is worth familiarizing yourself with them by reading the <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#concrete-exceptions">relevant section</a> from Python’s documentation.</p>
+<p>Let us take a look at an example of an out of bounds reference - this raises an exception called an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">places_to_visit</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Pompeii&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;Fernanda de Noronha&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;Dolomites&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;Bourbon Street&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">places_to_visit</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">6</span><span class="n">a516db87396</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+      <span class="mi">1</span> <span class="n">places_to_visit</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Pompeii&quot;</span><span class="p">,</span> <span class="s2">&quot;Fernanda de Noronha&quot;</span><span class="p">,</span> <span class="s2">&quot;Dolomites&quot;</span><span class="p">,</span> <span class="s2">&quot;Bourbon Street&quot;</span><span class="p">)</span>
+      <span class="mi">2</span> <span class="n">option</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># lets assume that the user has given the input option 4</span>
+<span class="o">----&gt;</span> <span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">places_to_visit</span><span class="p">[</span><span class="n">option</span><span class="p">])</span>
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">tuple</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</pre></div>
+</div>
+<p>Here we have an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> (i.e. a reference out-of-bounds) with the clarification that it is the <strong>tuple index out of range</strong>.</p>
+<p>The general way we deal with this issue in Python (and in many other programming languages) is to try to do what we indend to, and if it fails, we recover from the error. This is implemented using the <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span> <span class="n">we</span> <span class="n">indend</span> <span class="n">to</span> <span class="n">do</span><span class="o">&gt;</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span> <span class="k">for</span> <span class="n">handling</span> <span class="n">errors</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If something goes wrong in the <code class="docutils literal notranslate"><span class="pre">try</span></code> block, Python raises an <strong>exception</strong>, and the execution jumps immediately to the <code class="docutils literal notranslate"><span class="pre">except</span></code> block. If you use an <code class="docutils literal notranslate"><span class="pre">except</span></code> by itself as above, then it will catch all exceptions raised, but this is generally considered bad practice as it can hide errors that you might not have anticipated - the last thing we want is to hide a bug!</p>
+<p>Let us try an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">places_to_visit</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Pompeii&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Fernanda de Noronha&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Dolomites&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Bourbon Street&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">places_to_visit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The index should be an integer.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Values must be between 0-3.&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 1: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we pass 4 as an argument, an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> is raised.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 2: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">d82aff2337b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+      <span class="mi">7</span>     <span class="k">try</span><span class="p">:</span>
+<span class="o">----&gt;</span> <span class="mi">8</span>         <span class="k">return</span> <span class="n">places_to_visit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="mi">9</span>     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">tuple</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">baa17f0505ab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+      <span class="mi">1</span> <span class="c1"># If we pass in 4 as an argument, an *IndexError* ia raised.</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 2: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">d82aff2337b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+     <span class="mi">10</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The index should be an integer.&quot;</span><span class="p">)</span>
+     <span class="mi">11</span>     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+<span class="o">---&gt;</span> <span class="mi">12</span>         <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Values must be between 0-3.&quot;</span><span class="p">)</span>
+     <span class="mi">13</span> 
+     <span class="mi">14</span>     <span class="k">return</span> <span class="kc">None</span>
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="n">Values</span> <span class="n">must</span> <span class="n">be</span> <span class="n">between</span> <span class="mi">0</span><span class="o">-</span><span class="mf">3.</span>
+</pre></div>
+</div>
+<p>In the above example the expected input is an integer. If the user types a string, <em>e.g.</em>, <code class="docutils literal notranslate"><span class="pre">&quot;four&quot;</span></code>, then a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is raised, and the approperiate <code class="docutils literal notranslate"><span class="pre">except</span></code>-block is executed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 3: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="s2">&quot;four&quot;</span><span class="p">))</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">d82aff2337b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+      <span class="mi">7</span>     <span class="k">try</span><span class="p">:</span>
+<span class="o">----&gt;</span> <span class="mi">8</span>         <span class="k">return</span> <span class="n">places_to_visit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="mi">9</span>     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="nb">tuple</span> <span class="n">indices</span> <span class="n">must</span> <span class="n">be</span> <span class="n">integers</span> <span class="ow">or</span> <span class="n">slices</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">str</span>
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">a8af82536957</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+      <span class="mi">2</span> <span class="c1"># If the user types a string, e.g. &quot;four&quot;, then a **TypeError** is raised,</span>
+      <span class="mi">3</span> <span class="c1"># and the approperiate except block is executed.</span>
+<span class="o">----&gt;</span> <span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 3: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="s2">&quot;four&quot;</span><span class="p">))</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">d82aff2337b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+      <span class="mi">8</span>         <span class="k">return</span> <span class="n">places_to_visit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="mi">9</span>     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="o">---&gt;</span> <span class="mi">10</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The index should be an integer.&quot;</span><span class="p">)</span>
+     <span class="mi">11</span>     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+     <span class="mi">12</span>         <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Values must be between 0-3.&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">The</span> <span class="n">index</span> <span class="n">should</span> <span class="n">be</span> <span class="n">an</span> <span class="n">integer</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This is still not perfect. What happens if you enter -1?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 4: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recall that negative indices traverse the list from the end to the beginning. We can deal with this issue more elegantly/robustly if we <strong>raise</strong> our own error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">places_to_visit</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Pompeii&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Fernanda de Noronha&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Dolomites&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Bourbon Street&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">places_to_visit</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span>
+
+        <span class="k">return</span> <span class="n">places_to_visit</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The index should be an integer.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Values must be between 0-3.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 5: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">d29b7f03e343</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+      <span class="mi">8</span>         <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">places_to_visit</span><span class="p">):</span>
+<span class="o">----&gt;</span> <span class="mi">9</span>             <span class="k">raise</span> <span class="ne">IndexError</span>
+     <span class="mi">10</span> 
+
+<span class="ne">IndexError</span><span class="p">:</span> 
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">d29b7f03e343</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+     <span class="mi">17</span>     <span class="k">return</span> <span class="kc">None</span>
+     <span class="mi">18</span> 
+<span class="o">---&gt;</span> <span class="mi">19</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case 5: &quot;</span><span class="p">,</span> <span class="n">get_location</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">d29b7f03e343</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">get_location</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+     <span class="mi">13</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The index should be an integer.&quot;</span><span class="p">)</span>
+     <span class="mi">14</span>     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+<span class="o">---&gt;</span> <span class="mi">15</span>         <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Values must be between 0-3.&quot;</span><span class="p">)</span>
+     <span class="mi">16</span> 
+     <span class="mi">17</span>     <span class="k">return</span> <span class="kc">None</span>
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="n">Values</span> <span class="n">must</span> <span class="n">be</span> <span class="n">between</span> <span class="mi">0</span><span class="o">-</span><span class="mf">3.</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-3-4-test-more-in-the-program">
+<h2>Exercise 3.4: Test more in the program<a class="headerlink" href="#exercise-3-4-test-more-in-the-program" title="Permalink to this headline">#</a></h2>
+<p>Consider the equation of motion in Exercise 3.1.</p>
+<ul class="simple">
+<li><p>Implement this as a Python function - call the function <code class="docutils literal notranslate"><span class="pre">displacement</span></code> and specify two positional arguments <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> and one keyword argument <span class="math notranslate nohighlight">\(g = 9.81\,\text{ms}^{-2}\)</span>.</p></li>
+<li><p>The function should raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if either <span class="math notranslate nohighlight">\(t\)</span> or <span class="math notranslate nohighlight">\(v_0\)</span> are negative.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the code below. Do not change variable names for testing purposes.</span>
+
+<span class="c1"># def displacement(t, v0, g=9.81):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)):</span>
+    <span class="n">displacement</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mf">1.6</span><span class="p">,</span> <span class="n">v0</span><span class="o">=</span><span class="mf">101.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-5-implement-the-factorial-function-with-exception-handling">
+<h2>Exercise 3.5: Implement the factorial function with exception handling<a class="headerlink" href="#exercise-3-5-implement-the-factorial-function-with-exception-handling" title="Permalink to this headline">#</a></h2>
+<p>The factorial of <span class="math notranslate nohighlight">\(n\)</span>, written as <span class="math notranslate nohighlight">\(n!\)</span>, is defined as</p>
+<div class="math notranslate nohighlight">
+\[n! = n(n − 1)(n − 2) \cdot \ldots \cdot 2 \cdot 1,\]</div>
+<p>with the special cases</p>
+<div class="math notranslate nohighlight">
+\[1! = 1,$$ $$0! = 1.\]</div>
+<p>For example, <span class="math notranslate nohighlight">\(4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24\)</span>, and <span class="math notranslate nohighlight">\(2! = 2 \cdot 1 = 2\)</span>.</p>
+<p>Implement your own factorial function to calculate <span class="math notranslate nohighlight">\(n!\)</span> and name it <code class="docutils literal notranslate"><span class="pre">my_factorial</span></code>. Return <span class="math notranslate nohighlight">\(1\)</span> immediately if <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(0\)</span>, otherwise use a loop to compute <span class="math notranslate nohighlight">\(n!\)</span>. You can use Python’s own <a class="reference external" href="https://docs.python.org/3/library/math.html">math.factorial(x)</a> to check your code.</p>
+<p>If negative <span class="math notranslate nohighlight">\(n\)</span> is passed, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> should be raised.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def my_factorial(x):</span>
+<span class="c1">#     ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+    <span class="n">my_factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-6-wave-speed">
+<h2>Exercise 3.6: Wave speed<a class="headerlink" href="#exercise-3-6-wave-speed" title="Permalink to this headline">#</a></h2>
+<p>The longitudinal wave velocity in a material is given by the equation:</p>
+<div class="math notranslate nohighlight">
+\[V_p = \sqrt{\frac{k+4\mu/3}{\rho}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_p\)</span> is the longitudinal wave velocity, <span class="math notranslate nohighlight">\(k\)</span> is the bulk modulus, <span class="math notranslate nohighlight">\(\mu\)</span> is the shear modulus, and <span class="math notranslate nohighlight">\(\rho\)</span> is the density. The shear wave velocity <span class="math notranslate nohighlight">\(V_s\)</span> is given by the equation:
+$<span class="math notranslate nohighlight">\(V_s = \sqrt{\frac{\mu}{\rho}}.\)</span>$</p>
+<ol class="simple">
+<li><p>Write a function that takes as arguments <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\rho\)</span>, and returns <span class="math notranslate nohighlight">\(V_p\)</span> and <span class="math notranslate nohighlight">\(V_s\)</span>.</p></li>
+<li><p>Ensure your function raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if any of the input arguments have a non-physical value (i.e. it cannot have negative density).</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Material</p></th>
+<th class="head"><p>Shear modulus (GPa)</p></th>
+<th class="head"><p>Bulk modulus (GPa)</p></th>
+<th class="head"><p>Density (kg/m^3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Quartz</p></td>
+<td><p>44</p></td>
+<td><p>38</p></td>
+<td><p>2650</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clay</p></td>
+<td><p>6.85</p></td>
+<td><p>20.9</p></td>
+<td><p>2580</p></td>
+</tr>
+<tr class="row-even"><td><p>Water</p></td>
+<td><p>0</p></td>
+<td><p>2.29</p></td>
+<td><p>1000</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>HINT</strong>: Notice that <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> are in GPa and that the unit conversion is required.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and complete this code - keep the names the same for testing purposes.</span>
+
+<span class="c1"># def calc_material_velocity(mu, k, rho):</span>
+<span class="c1">#     ...</span>
+<span class="c1">#     return vp, vs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)):</span>
+    <span class="n">calc_material_velocity</span><span class="p">(</span><span class="mf">1.4e9</span><span class="p">,</span> <span class="mf">2.4e9</span><span class="p">,</span> <span class="mf">3.6e3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-data-from-a-plain-text-file">
+<h2>Reading data from a plain text file<a class="headerlink" href="#reading-data-from-a-plain-text-file" title="Permalink to this headline">#</a></h2>
+<p>We can read text from a <a class="reference external" href="http://en.wikipedia.org/wiki/Text_file">text file</a> into strings in a program. This is a common (and simple) way for a program to get input data. The basic recipe is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open text file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;myfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span> <span class="c1"># &quot;r&quot; specifies that we are opening the file for reading</span>
+
+    <span class="c1"># Read first line:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+    <span class="c1"># Read the lines in a loop one by one:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">process</span> <span class="n">line</span><span class="o">&gt;</span>
+
+    <span class="c1"># Load all remaining lines into a list of strings:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">process</span> <span class="n">line</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Let us look at the file <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">./data/data1.txt</span></code></span> (all of the data files in this lecture are stored in the sub-folder <code class="docutils literal notranslate"><span class="pre">data/</span></code> of this notebook directory). The file has a column of numbers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">21.8</span>
+<span class="mf">18.1</span>
+<span class="mi">19</span>
+<span class="mi">23</span>
+<span class="mi">26</span>
+<span class="mf">17.8</span>
+</pre></div>
+</div>
+<p>The goal is to read this file and calculate the mean:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise values</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Open data file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/data1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+
+    <span class="c1"># Loop to compute sum</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>  <span class="c1"># convert string to float</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">number</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Calculate the mean.</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us make this example more interesting. There is a <strong>lot</strong> of data out there for you to discover all kinds of interesting facts - you just need to be interested in learning a little analysis. For this case we have downloaded tidal gauge data for the port of Avonmouth from the <a class="reference external" href="http://www.bodc.ac.uk/">BODC</a>. Take some time now to open the file and have a look through it - <span class="xref myst">data/2012AVO.txt</span> you will see the <a class="reference external" href="http://en.wikipedia.org/wiki/Metadata">metadata</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Port</span><span class="p">:</span>              <span class="n">P060</span>  
+<span class="n">Site</span><span class="p">:</span>              <span class="n">Avonmouth</span>  
+<span class="n">Latitude</span><span class="p">:</span>          <span class="mf">51.51089</span>  
+<span class="n">Longitude</span><span class="p">:</span>         <span class="o">-</span><span class="mf">2.71497</span>  
+<span class="n">Start</span> <span class="n">Date</span><span class="p">:</span>        <span class="mi">01</span><span class="n">JAN2012</span><span class="o">-</span><span class="mf">00.00.00</span>  
+<span class="n">End</span> <span class="n">Date</span><span class="p">:</span>          <span class="mi">30</span><span class="n">APR2012</span><span class="o">-</span><span class="mf">23.45.00</span>  
+<span class="n">Contributor</span><span class="p">:</span>       <span class="n">National</span> <span class="n">Oceanography</span> <span class="n">Centre</span><span class="p">,</span> <span class="n">Liverpool</span>  
+<span class="n">Datum</span> <span class="n">information</span><span class="p">:</span> <span class="n">The</span> <span class="n">data</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">Admiralty</span> <span class="n">Chart</span> <span class="n">Datum</span> <span class="p">(</span><span class="n">ACD</span><span class="p">)</span>  
+<span class="n">Parameter</span> <span class="n">code</span><span class="p">:</span>    <span class="n">ASLVTD02</span> <span class="o">=</span> <span class="n">Surface</span> <span class="n">elevation</span> <span class="p">(</span><span class="n">unspecified</span> <span class="n">datum</span><span class="p">)</span> <span class="n">of</span> <span class="n">the</span> <span class="n">water</span> <span class="n">body</span> <span class="n">by</span> <span class="n">fixed</span> <span class="ow">in</span><span class="o">-</span><span class="n">situ</span> <span class="n">pressure</span> <span class="n">sensor</span>
+</pre></div>
+</div>
+<p>Let us read the column ASLVTD02 (the surface elevation) and plot it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pendulum</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Initialise an empty list to store the elevation</span>
+<span class="n">elevation</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/2012AVO.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tide_file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tide_file</span><span class="p">:</span>
+        <span class="c1"># Here we use a try/except block to try to read the data and</span>
+        <span class="c1"># raise an exception if we fail to parse the data in a line</span>
+        <span class="c1"># for some reason. This is a neat trick to skip over all the</span>
+        <span class="c1"># header information.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Split this line into words.</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+            <span class="c1"># If we do not have 5 words then the line must be part of the header.</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span>
+
+            <span class="c1"># The elevation data is in the 4th column. However, the BODC</span>
+            <span class="c1"># appends a &quot;M&quot; when a value is improbable and an &quot;N&quot; when</span>
+            <span class="c1"># data is missing (maybe a ship dumped into it during rough weather!)</span>
+            <span class="c1"># As we are in a try/except block, an error will be raised</span>
+            <span class="c1"># in the float conversion when this situation arises.</span>
+            <span class="n">level</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="n">elevation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+            <span class="c1"># Form a single string with the date and time.</span>
+            <span class="n">date_time</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+
+            <span class="c1"># Dealing with dates and time is a major pain as there are</span>
+            <span class="c1"># several different formats. Luckily there are lots of people</span>
+            <span class="c1"># out there writting libraries that are making your life easier.</span>
+            <span class="c1"># At the moment the Python library *pendulum* seems to be the</span>
+            <span class="c1"># best out there for parsing various different date and time</span>
+            <span class="c1"># formats and is pretty easy to use.</span>
+            <span class="n">date_time</span> <span class="o">=</span> <span class="n">pendulum</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_time</span><span class="p">)</span>
+
+            <span class="c1"># So that we can plot this we are going to convert this date</span>
+            <span class="c1"># and time into a POSIX timestamp (aka UNIX Epoch time):</span>
+            <span class="c1"># https://en.wikipedia.org/wiki/Unix_time</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date_time</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+<span class="c1"># For plotting lets convert the list to a NumPy array.</span>
+<span class="n">elevation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elevation</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">elevation</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Elevation (meters)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will notice in the above example that we used the <code class="docutils literal notranslate"><span class="pre">split()</span></code> string member function. This is a very useful function for grabbing individual words on a line. When called without any arguments it assumes that the <a class="reference external" href="http://en.wikipedia.org/wiki/Delimiter">delimiter</a> is a blank space. However, you can use this to split a string with any delimiter, e.g. <code class="docutils literal notranslate"><span class="pre">line.split(&quot;;&quot;)</span></code> or <code class="docutils literal notranslate"><span class="pre">line.split(&quot;:&quot;)</span></code>.</p>
+</section>
+<section id="exercise-3-7-read-a-two-column-data-file">
+<h2>Exercise 3.7: Read a two-column data file<a class="headerlink" href="#exercise-3-7-read-a-two-column-data-file" title="Permalink to this headline">#</a></h2>
+<p>The file <span class="xref myst">data/xy.dat</span> contains two columns of numbers, corresponding to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates on a curve. The start of the file looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">1.0000</span>   <span class="o">-</span><span class="mf">0.0000</span>  
+<span class="o">-</span><span class="mf">0.9933</span>   <span class="o">-</span><span class="mf">0.0087</span>  
+<span class="o">-</span><span class="mf">0.9867</span>   <span class="o">-</span><span class="mf">0.0179</span>  
+<span class="o">-</span><span class="mf">0.9800</span>   <span class="o">-</span><span class="mf">0.0274</span>  
+<span class="o">-</span><span class="mf">0.9733</span>   <span class="o">-</span><span class="mf">0.0374</span>
+</pre></div>
+</div>
+<p>Make a program that reads the first column into a list <code class="docutils literal notranslate"><span class="pre">xlist</span></code> and the second column into a list <code class="docutils literal notranslate"><span class="pre">ylist</span></code>. Then convert the lists to arrays named <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">yarray</span></code>. Store the maximum and minimum y coordinates in two variables named <code class="docutils literal notranslate"><span class="pre">ymin</span></code> and <code class="docutils literal notranslate"><span class="pre">ymax</span></code>.</p>
+<p><strong>Hint</strong>: Read the file line by line, split each line into words, convert to float, and append to <code class="docutils literal notranslate"><span class="pre">xlist</span></code> and <code class="docutils literal notranslate"><span class="pre">ylist</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)):</span>
+    <span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">xarray</span><span class="p">,</span> <span class="n">yarray</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-8-read-a-data-file">
+<h2>Exercise 3.8: Read a data file<a class="headerlink" href="#exercise-3-8-read-a-data-file" title="Permalink to this headline">#</a></h2>
+<p>The files <span class="xref myst">data/density_water.dat</span> and <span class="xref myst">data/density_air.dat</span> contain data about the density of water and air (respectively) for different temperatures. The data files have some comment lines starting with <code class="docutils literal notranslate"><span class="pre">#</span></code>, and some lines are blank. The rest of the lines contain density data: the temperature in the first column and the corresponding density in the second column. This exercise aims to read the data in such a file, discard commented or blank lines, and plot the density versus the temperature as distinct (small) circles for each data point. Write a function <code class="docutils literal notranslate"><span class="pre">readTempDenFile</span></code> that takes a filename as an argument and returns two lists containing the temperature and the density. Call this function on both files, and store the temperature and density in lists called <code class="docutils literal notranslate"><span class="pre">temp_air_list</span></code>, <code class="docutils literal notranslate"><span class="pre">dens_air_list</span></code>, <code class="docutils literal notranslate"><span class="pre">temp_water_list</span></code> and <code class="docutils literal notranslate"><span class="pre">dens_water_list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the following code. Do not change variable names for testing purposes.</span>
+
+<span class="c1"># def readTempDenFile(filename):</span>
+<span class="c1">#     ...</span>
+
+<span class="c1"># temp_air_list, dens_air_list = ...</span>
+<span class="c1"># temp_water_list, dens_water_list = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="n">readTempDenFile</span><span class="p">(</span><span class="s2">&quot;data/density_air.dat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-9-read-acceleration-data-and-find-velocities">
+<h2>Exercise 3.9: Read acceleration data and find velocities<a class="headerlink" href="#exercise-3-9-read-acceleration-data-and-find-velocities" title="Permalink to this headline">#</a></h2>
+<p>A file <span class="xref myst">data/acc.dat</span> contains measurements <span class="math notranslate nohighlight">\(a_0, a_1, \ldots, a_{n-1}\)</span> of the acceleration of an object moving along a straight line. The measurement <span class="math notranslate nohighlight">\(a_k\)</span> is taken at time point <span class="math notranslate nohighlight">\(t_k = k \Delta t\)</span>, where <span class="math notranslate nohighlight">\(\Delta t\)</span> is the time spacing between the measurements. The exercise aims to load the acceleration data into a program and compute the velocity <span class="math notranslate nohighlight">\(v(t)\)</span> of the object at some time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>In general, the acceleration <span class="math notranslate nohighlight">\(a(t)\)</span> is related to the velocity <span class="math notranslate nohighlight">\(v(t)\)</span> through <span class="math notranslate nohighlight">\(v^\prime(t) = a(t)\)</span>. This means that</p>
+<div class="math notranslate nohighlight">
+\[v(t) = v(0) + \int_0^t{a(\tau)d\tau}.\]</div>
+<p>If <span class="math notranslate nohighlight">\(a(t)\)</span> is only known at some discrete, equally spaced points in time, <span class="math notranslate nohighlight">\(a_0, \ldots, a_{n-1}\)</span> (which is the case in this exercise), we must compute the integral above numerically, for example, using the Trapezoidal rule:</p>
+<div class="math notranslate nohighlight">
+\[v(t_k) \approx v(0) + \Delta t \left(\frac{1}{2}a_0 + \frac{1}{2}a_k + \sum_{i=1}^{k-1}a_i \right), \ \ 1 \leq k \leq n-1. \]</div>
+<p>We assume <span class="math notranslate nohighlight">\(v(0) = 0\)</span>, so <span class="math notranslate nohighlight">\(v_0 = 0\)</span>. Read the values <span class="math notranslate nohighlight">\(a_0, \ldots, a_{n-1}\)</span> from file into an array <code class="docutils literal notranslate"><span class="pre">acc_array</span></code> and plot the acceleration versus time for <span class="math notranslate nohighlight">\(\Delta t = 0.5\)</span>. The time should be stored in an array named <code class="docutils literal notranslate"><span class="pre">time_array</span></code>.</p>
+<p>Then write a function <code class="docutils literal notranslate"><span class="pre">compute_velocity(dt,</span> <span class="pre">k,</span> <span class="pre">a)</span></code> that takes as arguments a time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> as <code class="docutils literal notranslate"><span class="pre">dt</span></code>, an index <code class="docutils literal notranslate"><span class="pre">k</span></code>, and a list of accelerations <code class="docutils literal notranslate"><span class="pre">a</span></code>. The function uses the Trapezoidal rule to compute one <span class="math notranslate nohighlight">\(v(t_k)\)</span> value and return this value. Experiment with different values of <span class="math notranslate nohighlight">\(\Delta t\)</span> and <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and modify the following code. Do not change variable names for testing purposes.</span>
+
+<span class="c1"># def compute_velocity(dt, k, a):</span>
+<span class="c1">#     ...</span>
+
+<span class="c1"># time_array = ...</span>
+<span class="c1"># acc_array = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_pybryt docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pybryt</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">pybryt_reference</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)):</span>
+    <span class="n">compute_velocity</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]),</span> <span class="n">acc_array</span><span class="p">,</span> <span class="n">time_array</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="n">ok</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="s2">&quot;exercise-3_9&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="file-writing">
+<h2>File writing<a class="headerlink" href="#file-writing" title="Permalink to this headline">#</a></h2>
+<p>Writing a file in Python is simple. First, we open the file in writing mode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>After that, we just collect the text we want to write in one or more strings, and, for each string, use a statement along the lines of</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The write function does not add a newline character so you may have to do that explicitly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s it! Compose the strings and write! Let’s do an example. Write a nested list (table) to a file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s define some table of data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.29619813</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.29619813</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.29619813</span><span class="p">,</span> <span class="mf">0.11697778</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11697778</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.29619813</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mf">0.29619813</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11697778</span><span class="p">,</span> <span class="mf">0.11697778</span><span class="p">,</span> <span class="mf">0.29619813</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.29619813</span><span class="p">,</span> <span class="mf">0.29619813</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]]</span>
+
+<span class="c1"># Open the file for writing. Notice the &quot;w&quot; indicates we are writing!</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tmp_table.dat&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%14.8f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">column</span><span class="p">)</span>
+        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># ensure newline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_okpy docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lecture3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

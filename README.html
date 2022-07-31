@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction to Python
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/README.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-run-this-course">
+   How to run this course
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterhub-ese-students">
+     1. JupyterHub (ESE students)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binder">
+     2. Binder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-your-machine">
+     3. On your machine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing">
+   Testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support">
+   Support
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-run-this-course">
+   How to run this course
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterhub-ese-students">
+     1. JupyterHub (ESE students)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binder">
+     2. Binder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-your-machine">
+     3. On your machine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing">
+   Testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support">
+   Support
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+<p>Welcome to <strong>Introduction to Python</strong>! Python is one of the most popular and powerful programming languages. It is used extensively in computational and data science, and you will use it in almost all modules during your MSc studies. This self-guided course will help you to learn the basics of Python.</p>
+<p>This course consists of four lectures (1, 2, 3, and 4), and we strongly recommend completing them in that order.</p>
+<section id="how-to-run-this-course">
+<h2>How to run this course<a class="headerlink" href="#how-to-run-this-course" title="Permalink to this headline">#</a></h2>
+<p>There are three possibilities for how you can learn Python with our self-guided course. <strong>JupyterHub</strong> and <strong>Binder</strong> options allow you to run tutorials in the cloud - you do not need to install anything, and no files will be created on your machine. All you need is a web browser and internet connection. However, you need to download Jupyter notebooks you worked in to ensure your work is not lost at the end of each session. The third option is to create a Python environment and run all tutorials on your machine. There is no difference in what you will learn, and we give you complete freedom to choose how you want to run tutorials.</p>
+<section id="jupyterhub-ese-students">
+<h3>1. JupyterHub (ESE students)<a class="headerlink" href="#jupyterhub-ese-students" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p><strong>Create a GitHub account</strong>. In the email you received, we sent you your unique username. Create a GitHub account and make sure your GitHub account uses that username.</p></li>
+<li><p><strong>Login to JupyterHub</strong>. By clicking the following badge, you can access our JupyterHub server and log in using the GitHub account you just created:</p></li>
+</ol>
+<p><a class="reference external" href="https://ese-jhub-pre-sess.westeurope.cloudapp.azure.com/pre-sess/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fese-msc%2Fintroduction-to-python&amp;urlpath=lab%2Ftree%2Fintroduction-to-python%2F&amp;branch=main"><img alt="JupyterHub" src="https://img.shields.io/badge/JupyterHub-ese--msc-orange" /></a></p>
+<p>After login, it may take some time for JupyterHub to start for the first time, so please be patient.</p>
+<p><strong>IMPORTANT:</strong> Please note that we do not guarantee your work is backed up. Therefore, we strongly recommend downloading the notebook at the end of each session.</p>
+</section>
+<section id="binder">
+<h3>2. Binder<a class="headerlink" href="#binder" title="Permalink to this headline">#</a></h3>
+<p>You can access Binder by clicking on the <em>Binder badge</em>:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/ese-msc/introduction-to-python/HEAD?labpath=index.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<p><strong>IMPORTANT:</strong> Please note that after the Binder session ends, all your work is deleted. Therefore, please download the notebook you worked in at the end of each session.</p>
+</section>
+<section id="on-your-machine">
+<h3>3. On your machine<a class="headerlink" href="#on-your-machine" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p><strong>Install Git</strong>. Please follow installation instructions for your operating system on <a class="reference external" href="https://git-scm.com/">Git webpage</a>.</p></li>
+<li><p><strong>Clone repository</strong>. In Terminal (Linux and MacOS) or Command Prompt (Windows), navigate to the location where you want the course files to be and run</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://github.com/ese-msc/introduction-to-python
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><strong>Install Anaconda</strong>. We recommend installation using conda package manager. If you do not already have it installed, download <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Python 3 for your operating system and follow the instructions to install it. After the installation is complete, in Terminal (Linux and MacOS) or Anaconda Prompt (Windows), navigate to the course directory, create a new conda environment, and activate it:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> path/to/course/directory
+<span class="gp">$ </span>conda env create -f environment.yml
+<span class="gp">$ </span>conda activate introduction-to-python
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><strong>Open Jupyter Notebook</strong>. In the environment you just activated, run:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>jupyter notebook <span class="p">&amp;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h2>
+<p>After (almost) each exercise, there are two cells containing some code. In those cells, we test your solution using two different testing packages:</p>
+<ol class="simple">
+<li><p><strong>PyBryt</strong> analyses your solution and provides you feedback on what is correct in your implementation, as well as what might be wrong. Please read PyBryt’s feedback carefully and address the <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> messages by modifying your solution.</p></li>
+<li><p><strong>okpy</strong> validates your final solution and provides you a mark for it.</p></li>
+</ol>
+<p>It is important to follow the instructions for each exercise exactly and do not change the names of variables, functions, or classes so that tests can analyse your code. Besides, please do not change the content of any of the testing cells.</p>
+<p>Although <strong>PyBryt</strong> provides much more detailed feedback, it is possible it complains about your code even though <strong>okpy</strong> confirms your code is correct. This is because PyBryt testing is based on comparing your solution to reference solutions. Since there is virtually an infinite number of alternative solutions, it is possible that your solution is not in our references. On the other hand, <strong>okpy</strong> looks at the final result of your code and if <strong>okpy</strong> is happy with your result, your code is correct and you do not have to address <strong>PyBryt</strong>’s error messages (if any).</p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">#</a></h2>
+<p><strong>We encourage questions!</strong> If you require support, have questions, want to report a bug, or want to suggest an improvement, please raise an issue in the <a class="reference external" href="https://github.com/ese-msc/introduction-to-python">course repository</a>.</p>
+<blockquote>
+<div><p><strong>Q:</strong> I don’t know where to ask my question. It might be related to something else, but I’m unsure. What should I do?<br />
+<strong>A:</strong> Open an issue in this repository. This is a safe, respectful space to ask questions and open issues.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Q:</strong> I’ve never opened an issue. How do I do it?<br />
+<strong>A:</strong> Click the <code class="docutils literal notranslate"><span class="pre">Issues</span></code> tab next to top of the page, then click the green <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Issue</span></code> button. Ask your question in the title and comment fields, then click  <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">new</span> <span class="pre">issue</span></code>. Congratulations, you submitted your question! We will try to get back to you shortly.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Q:</strong> How can I see if somebody else had the same or similar question?<br />
+<strong>A:</strong> When you click the <code class="docutils literal notranslate"><span class="pre">Issues</span></code> tab next to top of the page, you can see all issues that are currently open and are being addressed. In addition to them, you can also check the issues that have been resolved in <a class="reference external" href="https://github.com/ese-msc/introduction-to-python/issues?q=is%3Aissue+is%3Aclosed">closed issues</a>.</p>
+</div></blockquote>
+<p>Are you a community member that enjoys sharing your knowledge and helping others solve problems? We encourage you to respond to these issues.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
