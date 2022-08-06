@@ -72,3 +72,6 @@ Although **PyBryt** provides much more detailed feedback, it is possible it comp
 > **A:** When you click the `Issues` tab next to top of the page, you can see all issues that are currently open and are being addressed. In addition to them, you can also check the issues that have been resolved in [closed issues](https://github.com/ese-msc/introduction-to-python/issues?q=is%3Aissue+is%3Aclosed).
 
 Are you a community member that enjoys sharing your knowledge and helping others solve problems? We encourage you to respond to these issues.
+
+
+asdasd
